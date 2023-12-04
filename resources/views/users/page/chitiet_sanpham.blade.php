@@ -143,7 +143,7 @@
 							</div>
 						</div>
 					</div> <!-- best sellers widget -->
-					<div class="widget">
+					{{-- <div class="widget">
 						<h3 class="widget-title">Chi Tiết Bình Luận</h3>
 						<div class="widget-body">
 							<div class="beta-sales beta-lists" style="font-size: 15px">
@@ -158,7 +158,7 @@
                                 @endforeach
 							</div>
 						</div>
-					</div> <!-- best sellers widget -->
+					</div> <!-- best sellers widget --> --}}
 				</div>
 			</div>
 		</div> <!-- #content -->

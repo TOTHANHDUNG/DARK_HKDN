@@ -32,6 +32,7 @@
                 <th>Danh Mục</th>
                 <th>Price</th>
                 <th>Discount</th>
+                <th>Image</th>
                 <th>Edit</th>
                 <th>Delete</th>
               </thead>
@@ -40,13 +41,14 @@
                 @foreach($products  as $key => $product)
                
                   <tr>
-                    <td><img src="{{asset('images/'. $product->image)}}" width="40" /></td>
                     <td>{{$key+1}} </td>
 
                     <td>{{$product->name}} </td>
                     <td>{{$product->idcat}} </td>
                     <td>{{$product->price}} </td>
                     <td>{{$product->discount}} </td>
+                    <td><img src="{{asset('images/'. $product->image)}}" width="40" /></td>
+
                     <td><a href="{{route('product.edit', $product->id)}}" class="btn btn-primary"><i class="fa fa-edit"></i></a></td>
                     <td>
                     <form action="{{route('product.destroy', $product->id)}}" method="POST">

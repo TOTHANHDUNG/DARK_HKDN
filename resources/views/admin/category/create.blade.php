@@ -6,10 +6,10 @@
      <label for="name">Name:</label>
      <input type="text" class="form-control" name="name">
    </div>
-   <div class="form-group">
+   {{-- <div class="form-group">
      <label for="image">Image:</label>
      <input type="file" class="form-control"name="image">
-   </div>
+   </div> --}}
   {{-- <div class="form-group">
     <label for="discount">Description:</label>
     <input type="text" class="form-control"name="description">

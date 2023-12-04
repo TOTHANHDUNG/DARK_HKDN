@@ -146,7 +146,9 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         //delete images
-        $this->delImages($product->image);
+        if(!empty($product->image)){
+            $this->delImages($product->image);
+        }
         if($product->delete())
             Session::flash('message', 'successfully!');
         else
@@ -173,7 +175,6 @@ class ProductController extends Controller
     } 
     private function delImages($fileName)
     {
-         
         if (file_exists(public_path('images/' . $fileName))){
             $filedeleted = unlink(public_path('images/' . $fileName));
         }

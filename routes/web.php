@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Product;
-use App\Models\Category;
+use App\Models\Categories;
 use App\Models\User;
 use App\Models\Commet;
 
@@ -17,11 +17,10 @@ Route::group(['prefix' => 'panel', 'namespace' => 'admin'], function() {
 });
 
 Route::group(['middleware' => 'CheckAdminLogin','prefix' => 'panel'], function() {
-    Route::get('/', function() {$sanpham=Product::all();
-        $loaisanpham=Category::all();
-        $taikhoan=User::all();
-        $comment=Commet::all();
-    return view('admin.home.index',compact('sanpham','loaisanpham','taikhoan','comment'));})->name('welcome');
+    Route::get('/', function() {
+		$product = Product::all();
+        $categories = Categories::all();
+    return view('admin.home.index',compact('product','categories'));})->name('welcome');
 
 });
 
@@ -83,8 +82,8 @@ Route::get('dang-xuat','PageController@postLogout')->name('logout');
 Route::get('search','PageController@getSearch')->name('search');
 Route::get('donhang','PageController@getDonHang')->name('donhang');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 Route::get('/ logout','_Admincontroller@logout');
     

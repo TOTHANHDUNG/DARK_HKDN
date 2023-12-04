@@ -13,7 +13,7 @@
 </div>
 <table  class="table table-bordered" style="margin-top:20px;">
   <thead>
-    <th>STT</th>
+    <th>ID</th>
     <th>Name</th>
     <th>Edit</th>
     <th>Delete</th>
@@ -21,7 +21,7 @@
   <tbody>
     @foreach($cate  as $key => $category)
       <tr>
-        <td>{{$key}}</td>
+        <td>{{$category->id}}</td>
         <td>{{$category->name}} </td>
         <td><a href="{{route('category.edit', $category->id)}}" class="btn btn-primary"><i class="fa fa-edit"></i></a></td>
         <td>

@@ -30,7 +30,7 @@
                     </div>
                 </div>
                 <h4 class="mb-0">
-                    <span class="count">10468</span>
+                    <span class="count">{{$product->count()}}</span>
                 </h4>
                 <p class="text-light">Sản Phẩm</p>
 
@@ -60,7 +60,7 @@
                     </div>
                 </div>
                 <h4 class="mb-0">
-                    <span class="count">10468</span>
+                    <span class="count">{{$categories->count();}}</span>
                 </h4>
                 <p class="text-light">Danh Mục</p>
 

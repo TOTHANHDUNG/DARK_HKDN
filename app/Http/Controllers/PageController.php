@@ -28,18 +28,11 @@ class PageController extends Controller
         return view('users.page.trangchu',compact('products'));
     }
 
-    public function getLoaiSp($type){
-        $sp_theoloai = Product::where('idcat',$type)->get();
-        $sp_khac = Product::where('idcat','<>',$type)->paginate(3);
-        $loai = Category::all();
-        $loai_sp = Category::where('id',$type)->first();
-    	return view('users.page.loai_sanpham',compact('sp_theoloai','sp_khac','loai','loai_sp'));
-    }
 
     public function getChitiet(Request $req,$id){
         $sanpham = Product::where('id',$req->id)->first();
         $data=Commet::where('id_com',$id)->get();
-        $sp_tuongtu = Product::where('idcat',$sanpham->id_type)->paginate(6);
+        $sp_tuongtu = Product::where('idcat',$sanpham->idcat)->where('id', '<>', $sanpham->id)->paginate(6);
     	return view('users.page.chitiet_sanpham',compact('sanpham','sp_tuongtu','data'));
     }
 
